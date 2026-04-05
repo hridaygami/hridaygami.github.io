@@ -51,8 +51,8 @@ document.querySelectorAll('.contact-links .contact-card').forEach((card, i) => {
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(15, 17, 23, 0.95)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.97)';
     } else {
-        navbar.style.background = 'rgba(15, 17, 23, 0.85)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
     }
 });
