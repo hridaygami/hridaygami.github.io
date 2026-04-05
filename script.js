@@ -15,6 +15,26 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    // ☀ for light mode (click to go dark), ☽ for dark mode (click to go light)
+    themeIcon.textContent = theme === 'dark' ? '\u2600' : '\u263D';
+}
+
+// Load saved theme or default to light
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
 // Scroll-triggered fade-in animations
 const observerOptions = { threshold: 0.15 };
 
@@ -45,14 +65,4 @@ document.querySelectorAll('.projects-grid .project-card').forEach((card, i) => {
 
 document.querySelectorAll('.contact-links .contact-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.08}s`;
-});
-
-// Navbar background change on scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.97)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-    }
 });
