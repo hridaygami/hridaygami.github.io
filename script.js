@@ -46,13 +46,3 @@ document.querySelectorAll('.projects-grid .project-card').forEach((card, i) => {
 document.querySelectorAll('.contact-links .contact-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.08}s`;
 });
-
-// Navbar background change on scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.97)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-    }
-});
