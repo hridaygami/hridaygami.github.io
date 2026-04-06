@@ -229,7 +229,7 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("https://placehold.co/1920x1080/E8E8E8/CCCCCC?text=+");
+    background-image: url("images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.15;
